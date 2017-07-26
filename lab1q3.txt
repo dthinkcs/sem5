@@ -1,0 +1,29 @@
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ find  *.txt
+abctext.txt
+lab1q1.txt
+lab1q2.txt
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls *.txt
+abctext.txt  lab1q1.txt  lab1q2.txt  lab1q3.txt
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls *[0-9]*
+lab1q1.txt  lab1q1.txt~  lab1q2.txt  lab1q3.txt
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls ????*
+abctext.txt  lab1q1.txt  lab1q1.txt~  lab1q2.txt  lab1q3.txt  listpipe.txt.save
+
+newD:
+abc1.txt  empty  lab1.txt  list.txt
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ find [!a,e,i,o,u]*
+lab1q1.txt
+lab1q1.txt~
+lab1q2.txt
+lab1q3.txt
+listpipe.txt.save
+newD
+newD/abc1.txt
+newD/empty
+newD/list.txt
+newD/lab1.txt
+

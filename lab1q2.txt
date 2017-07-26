@@ -1,0 +1,67 @@
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >abctext.txt
+this is a text file^Z
+[2]+  Stopped                 cat > abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >abctext.txt
+^Z
+[3]+  Stopped                 cat > abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+this is a text ^Z
+[4]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+tgdslkjhsd
+^Z
+[5]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+gdjg^Z
+[6]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+jgkshlsjdfklhgs
+^Z
+[7]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head -5 abctext.txt 
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head -1 abctext.txt 
+tgdslkjhsd
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cp abctext.txt abc1text.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abc1text.txt  abctext.txt  empty  lab1.txt
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ mv empty newD
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1         lab1q1.txt   lab1q2.txt  listpipe.txt.save  newD
+abctext.txt  lab1q1.txt~  lab1.txt    list.txt
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ mv abc1.txt list.txt newD
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abctext.txt  lab1q1.txt  lab1q1.txt~  lab1q2.txt  listpipe.txt.save  newD
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ rm abc1text.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abctext.txt  empty  lab1.txt
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ mkdir temp
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abctext.txt  lab1q1.txt  lab1q1.txt~  lab1q2.txt  listpipe.txt.save  newD  temp
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ rmdir temp
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abctext.txt  lab1q1.txt  lab1q1.txt~  lab1q2.txt  listpipe.txt.save  newD
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ find  *.txt
+abctext.txt
+lab1q1.txt
+lab1q2.txt
+
+
