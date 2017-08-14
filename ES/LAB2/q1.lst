@@ -1,0 +1,163 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0X10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 AREA             mycode, CODE, READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           Reset_Handler
+   11 00000000         
+   12 00000000         Reset_Handler
+   13 00000000 4812            LDR              R0, =arr1
+   14 00000002 4913            LDR              R1, =arr2
+   15 00000004 4B13            LDR              R3, =res
+   16 00000006 F04F 0204       MOV              R2, #04
+   17 0000000A         UP
+   18 0000000A F850 4B04       LDR              R4, [R0],#04
+   19 0000000E F851 5B04       LDR              R5, [R1],#04
+   20 00000012         
+   21 00000012 EB54 0605       ADCS             R6, R4, R5
+   22 00000016 F843 6B04       STR              R6, [R3],#04
+   23 0000001A F1A2 0201       SUB              R2, #01
+   24 0000001E F092 0F00       TEQ              R2, #0
+   25 00000022 D1F2            BNE              UP
+   26 00000024         
+   27 00000024 F142 0200       ADC              R2, #00
+   28 00000028 601A            STR              R2, [R3]
+   29 0000002A E7FE    STOP    B                STOP
+   30 0000002C FFFFFFFF 
+              FFFFFFFF 
+              FFFFFFFF 
+              FFFFFFFF arr1    DCD              0XFFFFFFFF, 0XFFFFFFFF, 0XFFFFF
+FFF, 0XFFFFFFFF
+   31 0000003C FFFFFFFF 
+              FFFFFFFF 
+              FFFFFFFF 
+              FFFFFFFF arr2    DCD              0XFFFFFFFF, 0XFFFFFFFF, 0XFFFFF
+FFF, 0XFFFFFFFF
+   32 0000004C         
+   33 0000004C 00000000 
+              00000000 
+              00000000         AREA             mydata, DATA, READWRITE
+   34 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 res     DCD              0, 0, 0, 0
+   35 00000010         
+   36 00000010         
+   37 00000010         
+                       
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q1.d -oq
+1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LP
+C17xx --predefine="__EVAL SETA 1" --list=q1.lst q1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q1.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file q1.asm
+   Uses
+      At line 2 in file q1.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file q1.asm
+   Uses
+      At line 6 in file q1.asm
+      At line 10 in file q1.asm
+
+STOP 0000002A
+
+Symbol: STOP
+   Definitions
+      At line 29 in file q1.asm
+   Uses
+      At line 29 in file q1.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 17 in file q1.asm
+   Uses
+      At line 25 in file q1.asm
+Comment: UP used once
+arr1 0000002C
+
+Symbol: arr1
+   Definitions
+      At line 30 in file q1.asm
+   Uses
+      At line 13 in file q1.asm
+Comment: arr1 used once
+arr2 0000003C
+
+Symbol: arr2
+   Definitions
+      At line 31 in file q1.asm
+   Uses
+      At line 14 in file q1.asm
+Comment: arr2 used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 8 in file q1.asm
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 33 in file q1.asm
+   Uses
+      None
+Comment: mydata unused
+res 00000000
+
+Symbol: res
+   Definitions
+      At line 34 in file q1.asm
+   Uses
+      At line 15 in file q1.asm
+Comment: res used once
+2 symbols
+343 symbols in table
