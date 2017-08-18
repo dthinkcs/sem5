@@ -1,6 +1,0 @@
-student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab3$ ls | grep -E '[0-9]' | wc -l
-2
-student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab3$ killall -KILL wc
-wc: no process found
-student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab3$ find  *MIT*; grep -E '*MIT' MIT.txt | sed 's/MIT/Manipal Institute of Technology/' MIT.txt
-
