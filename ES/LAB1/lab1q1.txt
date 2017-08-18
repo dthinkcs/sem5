@@ -1,0 +1,153 @@
+bash: cd: Desktop: No such file or directory
+student4@MIT-ICT-LAB4-01:/$ cd ~
+student4@MIT-ICT-LAB4-01:~$ cd Desktop
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd ~
+student4@MIT-ICT-LAB4-01:~$ ls
+Desktop    Downloads         Music     Public     Videos
+Documents  examples.desktop  Pictures  Templates
+student4@MIT-ICT-LAB4-01:~$ cd Downloads
+student4@MIT-ICT-LAB4-01:~/Downloads$ ls
+student4@MIT-ICT-LAB4-01:~/Downloads$ cd ~
+student4@MIT-ICT-LAB4-01:~$ cd Desktop
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd abc
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cd..
+cd..: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cd ..
+student4@MIT-ICT-LAB4-01:~/Desktop$ man *
+No manual entry for abc
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd ~
+student4@MIT-ICT-LAB4-01:~$ cd Desktop
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd abc
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ touch abc1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ file abc1
+abc1: empty 
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abc.txt
+cat: abc.txt: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abc1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >abctext.txt
+this is a text file ^Z
+[1]+  Stopped                 cat > abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >abctext.txt
+this is a text file^Z
+[2]+  Stopped                 cat > abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >abctext.txt
+^Z
+[3]+  Stopped                 cat > abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+this is a text ^Z
+[4]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+tgdslkjhsd
+^Z
+[5]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+gdjg^Z
+[6]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat >>abctext.txt
+jgkshlsjdfklhgs
+^Z
+[7]+  Stopped                 cat >> abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ man rmdir
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ nano lab1.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cd ..
+student4@MIT-ICT-LAB4-01:~/Desktop$ mkdir newD
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls
+abc  newD
+student4@MIT-ICT-LAB4-01:~/Desktop$ $date
+student4@MIT-ICT-LAB4-01:~/Desktop$ date
+Wed Jul 26 14:52:27 IST 2017
+student4@MIT-ICT-LAB4-01:~/Desktop$ man cp
+student4@MIT-ICT-LAB4-01:~/Desktop$ clear
+
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls
+abc  newD
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls -l 
+total 8
+drwxrwxr-x 2 student4 student4 4096 Jul 26 14:42 abc
+drwxrwxr-x 2 student4 student4 4096 Jul 26 14:50 newD
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls -l --color
+total 8
+drwxrwxr-x 2 student4 student4 4096 Jul 26 14:42 abc
+drwxrwxr-x 2 student4 student4 4096 Jul 26 14:50 newD
+student4@MIT-ICT-LAB4-01:~/Desktop$ cat abc
+cat: abc: Is a directory
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd abc
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls -l
+total 12
+-rw-rw-r-- 1 student4 student4    0 Jul 26 14:25 abc1
+-rw-rw-r-- 1 student4 student4   27 Jul 26 14:30 abctext.txt
+-rw-rw-r-- 1 student4 student4 4941 Jul 26 14:42 lab1.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abc1.txt
+cat: abc1.txt: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cat abc1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ pwd
+/home/student4/Desktop/abc
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls a*
+abc1  abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls a?
+ls: cannot access a?: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls a??
+ls: cannot access a??: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls a???
+abc1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls [abc]
+ls: cannot access [abc]: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls [abc]*
+abc1  abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls [aBC]*
+abc1  abctext.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ touch empty
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head abctext.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ cp abctext.txt abc1text.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abc1text.txt  abctext.txt  empty  lab1.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ head abc1text.txt
+tgdslkjhsd
+jgkshlsjdfklhgs
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ rm abc1text.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abctext.txt  empty  lab1.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ grep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ which grep
+/bin/grep
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ whereis ls
+ls: /bin/ls /usr/share/man/man1/ls.1.gz
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ whereis abctext.txt
+abctext:
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ whereis mkdir
+mkdir: /bin/mkdir /usr/share/man/man2/mkdir.2.gz /usr/share/man/man1/mkdir.1.gz
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls -l > list.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls
+abc1  abctext.txt  empty  lab1.txt  list.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ touch list.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls -l | listpipe.txt
+listpipe.txt: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ ls -l | nano listpipe.txt
+Received SIGHUP or SIGTERM
+
+Buffer written to listpipe.txt.save
+student4@MIT-ICT-LAB4-01:~/Desktop/abc$ 
+

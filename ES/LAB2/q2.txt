@@ -1,0 +1,38 @@
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep '^....$' temp.txt
+MIT 
+lab2
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep -E ^[A-Z] temp.txt
+MIT 
+OS LAB
+Linux
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep '[.]$' temp.txt
+using grep command.
+grep : used for searching plain-text data sets for lines matching regular expression.
+
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep ' ' temp.txt
+OS LAB
+ubuntu 16.04
+using grep command.
+grep : used for searching plain-text data sets for lines matching regular expression.
+
+
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep '[0-9]' temp.txt | nano new.txt
+Received SIGHUP or SIGTERM
+
+Buffer written to new.txt.save
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ nano new.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep '[0-9]' temp.txt | nano new.txt
+Received SIGHUP or SIGTERM
+
+Buffer written to new.txt.save.1
+student4@MIT-ICT-LAB4-01:~/Desktop/abc/Lab2$ grep '[0-9]' temp.txt >> newRedirect.txt
+
+
+
+
+
+
