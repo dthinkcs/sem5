@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pig latin</title>
+</head>
+<body>
+<h1>Pig Latin</h1>
+<div>
+Enter word in english:
+<input type="text" name="word" id="name"> <br>
+Word in pig latin:
+<strong><label name="pig" id="pig"></label><br></strong>
+<button onclick="pig()">Encode</button>
+</div>
+
+<script>
+	function pig() {
+		
+		var word = document.getElementById("name").value;
+
+		var arr = word.split(" ");
+		
+		var str ="";
+		for (var i = 0; i < arr.length; i++) {
+			
+			var firstCh = arr[i].slice(0,1)
+			str = str + arr[i].slice(1, word.length)+firstCh+"ay"+" ";	
+		}
+		
+		document.getElementById("pig").innerHTML = str;
+	}
+</script>
+</body>
+</html>

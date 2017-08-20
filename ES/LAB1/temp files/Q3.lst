@@ -1,0 +1,150 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008         
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         
+   11 00000000         Reset_Handler
+   12 00000000 F04F 0005       MOV              R0,#0X5
+   13 00000004 4906            LDR              R1,=src
+   14 00000006 4A07            LDR              R2,=src+(len-1)*4
+   15 00000008         
+   16 00000008 680C    LP      LDR              R4,[R1]
+   17 0000000A 6815            LDR              R5,[R2]
+   18 0000000C F841 5B04       STR              R5,[R1],#4
+   19 00000010 F842 4904       STR              R4,[R2],#-4
+   20 00000014 F1A0 0001       SUB              R0,#01
+   21 00000018 F090 0F00       TEQ              R0,#0
+   22 0000001C D1F4            BNE              LP
+   23 0000001E E7FE    STOP    B                STOP
+   24 00000020 0000000A 
+                       len     EQU              10
+   25 00000020 00000000 
+              00000024         AREA             reverse,DATA,READWRITE
+   26 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 src     DCD              0,0,0,0,0,0,0,0,0,0
+   27 00000028                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=Q3.d -oQ
+3.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LP
+C17xx --predefine="__EVAL SETA 1" --list=Q3.lst Q3.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file Q3.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file Q3.s
+   Uses
+      At line 2 in file Q3.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LP 00000008
+
+Symbol: LP
+   Definitions
+      At line 16 in file Q3.s
+   Uses
+      At line 22 in file Q3.s
+Comment: LP used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 11 in file Q3.s
+   Uses
+      At line 5 in file Q3.s
+      At line 9 in file Q3.s
+
+STOP 0000001E
+
+Symbol: STOP
+   Definitions
+      At line 23 in file Q3.s
+   Uses
+      At line 23 in file Q3.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file Q3.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+reverse 00000000
+
+Symbol: reverse
+   Definitions
+      At line 25 in file Q3.s
+   Uses
+      None
+Comment: reverse unused
+src 00000000
+
+Symbol: src
+   Definitions
+      At line 26 in file Q3.s
+   Uses
+      At line 13 in file Q3.s
+      At line 14 in file Q3.s
+
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+len 0000000A
+
+Symbol: len
+   Definitions
+      At line 24 in file Q3.s
+   Uses
+      At line 14 in file Q3.s
+Comment: len used once
+1 symbol
+342 symbols in table
