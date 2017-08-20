@@ -9,7 +9,7 @@
 Enter word in english:
 <input type="text" name="word" id="name"> <br>
 Word in pig latin:
-<strong><label name="pig" id="pig"></label><br></strong>
+<strong><label name="pig" id="pig" style="font-size: 25px;"></label><br></strong>
 <button onclick="pig()">Encode</button>
 </div>
 
@@ -17,9 +17,7 @@ Word in pig latin:
 	function pig() {
 		
 		var word = document.getElementById("name").value;
-
 		var arr = word.split(" ");
-		
 		var str ="";
 		for (var i = 0; i < arr.length; i++) {
 			
