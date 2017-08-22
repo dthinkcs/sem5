@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Enter a word:</h1>
+<div>
+<input type="text" name="word" id="word"> <br><br>
+Left-most vowel:
+<strong><label name="area" id="area" style="font-size: 25px;"></label><br></strong><br>
+
+<button onclick="findVowel()">Click</button>
+</div>
+<script type="text/javascript">
+	function findVowel() {
+		var str = document.getElementById("word").value;
+		str = str.toLowerCase();
+		alert(str);
+		var vow = ['a','e','i','o','u'];
+		var index=str.length;
+		var index1;
+		var i=0;
+		while(i<5){
+		index1 = str.indexOf(vow[0]);
+		if(index1 == -1){
+			index1 = str.length
+		
+		}
+		if(index1 < index){
+			index =index1;
+		}
+		i++;
+	}
+	alert(index);
+}
+</script>
+</body>
+</html>
