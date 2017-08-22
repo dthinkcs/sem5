@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Enter phone number:</h1>
+<div>
+<input type="text" name="number1" id="number1" placeholder="(000) 000-0000"> <br><br>
+Area Code:
+<strong><label name="area" id="area" style="font-size: 25px;"></label><br></strong><br>
+Phone Number:
+<strong><label name="phone" id="phone" style="font-size: 25px;"></label><br></strong><br>
+<button onclick="formatno()">Format</button>
+</div>
+<script type="text/javascript">
+	
+	function formatno() {
+		var str = document.getElementById("number1").value;
+		var arr = str.split(")");
+		var code = arr[0];
+		code = code.replace("(","");
+		document.getElementById("area").innerHTML = code;
+		document.getElementById("phone").innerHTML = arr[1];
+
+	}
+
+</script>
+</body>
+</html>

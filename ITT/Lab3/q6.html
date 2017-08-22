@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="calc()">
+<script type="text/javascript">
+function calc() {
+	var res = "";
+	for (var i = 0; i <= 10; i++) {
+			res = res +"<tr>" + "<td>" + i + " : square : " + Math.pow(i,2) + "-- cube: " + Math.pow(i,3) + "</td>" + "<tr><br>" ;			
+		}
+		document.getElementById('table').innerHTML = res;
+	}
+</script>
+<table>
+<div id="table">
+	
+</div>
+</table>
+</body>
+</html>

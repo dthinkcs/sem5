@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="grow()">
+<script type="text/javascript">
+	function grow() {
+		var text = document.getElementById("text");
+		setInterval(growFn, 100);
+		var size = 12;
+		flag = 1;
+		function growFn(){
+			if(size >= 50){
+				flag = 0;
+			}
+			else if(size <= 5){
+				flag = 1;
+			}
+			if(flag == 1){
+				size++;
+				text.style.fontSize = size+"pt";
+				text.style.color = "red";
+				text.textContent = "TEXT-GROWING";
+
+			}
+			if(flag == 0) {
+				size--;
+				text.style.fontSize = size+"pt";
+				text.style.color = "blue";
+				text.textContent = "TEXT-SHRINKING"
+			}
+		}
+	}
+</script>
+<div id="text-grow" align="center" onload="grow()">
+	<div id="text" style="color:red; margin-top: 100px;">TEXT-GROWING</div>
+	
+</div>
+
+</body>
+</html>

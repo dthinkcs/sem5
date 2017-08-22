@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Enter 5-letter word:</h1>
+<div>
+<input type="text" name="word" id="word"> <br><br>
+Possible 3-letter words:
+<strong><label name="area" id="area" style="font-size: 25px;"></label><br></strong><br>
+
+<button onclick="formWords()">Possible words</button>
+</div>
+<script type="text/javascript">
+	function formWords() {
+		var str = document.getElementById("word").value;
+		var arr = str.split("");
+		var res = "";
+		for (var i = 0; i < arr.length; i++) {
+			for(var j=i+1;j<i;j++)
+				for(var k=j+1;k<j;k++){
+
+					res = res +", "+ arr[i] + arr[j] + arr[k] + " ";
+					alert(res);
+				}
+	}
+}
+</script>
+</body>
+</html>
