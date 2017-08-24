@@ -6,5 +6,5 @@ echo "enter file name"
 read name
 cd ..
 cd $name
-echo ""
+echo "
 find *$str*
