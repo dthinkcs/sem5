@@ -1,0 +1,24 @@
+student4@MIT-ICT-LAB4-01:~$ cd Desktop/
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd os/
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ls
+hello.c  hello.c~
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ gcc hello.c
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ls
+a.out  hello.c  hello.c~
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ./a.out 
+hello worldstudent4@MIT-ICT-LAB4-01:~/Desktop/os$ gcc -0 exeFile.c
+gcc: error: exeFile.c: No such file or directory
+gcc: error: unrecognized command line option ‘-0’
+gcc: fatal error: no input files
+compilation terminated.
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ gcc -o exeFile.c hello.c
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ls
+a.out  exeFile.c  hello.c  hello.c~
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ./exeFile.c 
+hello worldstudent4@MIT-ICT-LAB4-01:~/Desktop/os$ exeFile.c
+exeFile.c: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ gcc -o exeFil hello.c
+student4@MIT-ICT-LAB4-01:~/Desktop/os$ ls
+a.out  exeFil  exeFile.c  hello.c  hello.c~
+student4@MIT-ICT-LAB4-01:~/Desktop/os$  
+
