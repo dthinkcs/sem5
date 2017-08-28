@@ -17,14 +17,17 @@ Possible 3-letter words:
 		var str = document.getElementById("word").value;
 		var arr = str.split("");
 		var res = "";
-		for (var i = 0; i < arr.length; i++) {
-			for(var j=i+1;j<i;j++)
-				for(var k=j+1;k<j;k++){
-
-					res = res +", "+ arr[i] + arr[j] + arr[k] + " ";
-					alert(res);
+		for (var i = 0; i<arr.length; i++) {
+			for(var j=0; j<arr.length; j++){
+				for(var k=0;k<arr.length; k++){
+					if(i!=j && j!=k && k!=i){
+					res = res + arr[i] + arr[j] + arr[k] + ", ";
+				
 				}
+				}
+			}
 	}
+	document.getElementById("area").innerHTML = "<br>"+res;
 }
 </script>
 </body>
