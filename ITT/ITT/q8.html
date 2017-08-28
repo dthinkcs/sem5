@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3>Select an option:</h3>
+<select onchange="operation()" id="select">
+	<option>select an option</option>
+	<option value="fact">Factorial</option>
+	<option value="mul">Multiplication</option>
+</select>
+<div id="workArea">
+</div>
+<script type="text/javascript">
+	function operation() {
+		var choice = document.getElementById('select').value;
+		if (choice == "fact") {
+			document.getElementById("workArea").innerHTML = "<h3> Factorial of number </h3>" +"<br><input type='number' id='no'>"+"<button onclick='fact()'>Click</button>";
+		}if (choice == "mul") {
+				document.getElementById("workArea").innerHTML = "<h3> Multiplication of number </h3>" +"<br>number: <input type='number' id='no'>"+"<br> <br>rows: <input type='number' id='row'> <br><br>"+"<button onclick='mul()'>Click</button>";
+		}
+	}
+	function fact(){
+			var no = document.getElementById("no").value;
+			var res = 1;
+			for (var i = 1; i <= no; i++) {
+				res = res*i;
+			}
+			document.getElementById("workArea").innerHTML = "<br>"+"Factorial of "+no+" : "+res;
+			}
+	function mul(){
+			var no = document.getElementById("no").value;
+			var row = document.getElementById("row").value;
+			var res ="<br>";
+			for (var i = 0; i <= row; i++) {
+				res = res + no + "*" + i +" = " + no*i + "<br>";	
+			}
+			document.getElementById("workArea").innerHTML = res;
+}
+</script>
+</body>
+</html>

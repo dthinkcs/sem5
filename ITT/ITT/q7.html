@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div>
+	<h3>Enter your first name:</h3><br>
+	<input type="text" id="name">
+	<button onclick="magic()">Click me!</button>
+	<br><br>
+	<textarea id="case"></textarea>
+	<br><br>
+	<label id="contains"></label>
+	<script type="text/javascript">
+		function magic() {
+			var str = document.getElementById("name").value;
+			alert("length : "+str.length);
+			document.getElementById('case').innerText = "UpperCase :"+str.toUpperCase()+" "+"LowerCase : "+ str.toLowerCase();
+			if(str.search('a') != -1){
+				document.getElementById("contains").innerText = "Entered name contains a";
+			}
+		}
+	</script>
+</div>
+</body>
+</html>
