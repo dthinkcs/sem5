@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3>Number of Parking hours : </h3> 
+<input type="text" id="hr"name="">
+<br><br>
+<button onclick="charge()">Calculate</button>
+<h3>Parking charge : </h3>
+<label id="charge">
+	
+</label>
+<br><br>
+<button onclick="previous()">Previous record</button>
+<div id="record">
+</div>
+<script type="text/javascript">
+	function charge() {
+		var hr = document.getElementById("hr").value;
+		var ch = 2.00;
+		hr = parseInt(hr);
+			while(hr>=3){
+				ch = ch + 0.50;
+				hr = hr - 1;
+			}
+		document.getElementById('charge').innerText = "$"+ch;
+
+	}
+
+	function previous() {
+		document.getElementById('record').innerHTML = "<br>"+"<table>	<td> <th> Registration number </th> <th> Charge </th></td>"+"
+	    </table>";
+	
+	}
+</script>
+</body>
+</html>
