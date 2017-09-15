@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var no = Math.floor((Math.random() * 15) + 1);
+	var user = 0;
+	alert(no);
+	while(no!=user){
+		var user = prompt("Please enter a number", 0);
+		user = parseInt(user);
+	
+		if(user < no){
+			alert("your guess is less than the number");
+		}
+		if(user > no){
+			alert("your guess is more than the number");
+		}
+			if(no == user){
+			alert("number matched");
+		}
+}
+</script>
+</body>
+</html>

@@ -12,6 +12,13 @@ Left-most vowel:
 
 <button onclick="findVowel()">Click</button>
 </div>
+
+<input type="number" id="no"> <br><br>
+Reverse number:
+<strong><label name="area" id="area" style="font-size: 25px;"></label><br></strong><br>
+
+<button onclick="rev()">Click</button>
+
 <script type="text/javascript">
 	function findVowel() {
 		var str = document.getElementById("word").value;
@@ -21,18 +28,26 @@ Left-most vowel:
 		var index=str.length;
 		var index1;
 		var i=0;
+		var indexarr = [0]
 		while(i<5){
-		index1 = str.indexOf(vow[0]);
-		if(index1 == -1){
-			index1 = str.length
-		
-		}
-		if(index1 < index){
-			index =index1;
-		}
+		indexarr[i] = str.indexOf(vow[i]);
 		i++;
 	}
-	alert(index);
+	indexarr = indexarr.sort();
+	var j =0;
+	while(indexarr[j] == -1){
+		j++;
+}
+	alert(indexarr[j]+1);
+
+}
+function rev(){
+	var no = document.getElementById("no").value;
+	no = no.split("");
+	no = no.reverse();
+	no = no.toString();
+	no = no.replace(/,/g,"");
+	alert(no);
 }
 </script>
 </body>
