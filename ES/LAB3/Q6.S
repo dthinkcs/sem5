@@ -1,0 +1,35 @@
+;LCM 
+  	AREA RESET, DATA, READONLY
+	EXPORT __Vectors
+__Vectors
+	DCD 0X10001000
+	DCD Reset_Handler
+	
+	AREA mycode, CODE, READONLY
+	ENTRY
+	EXPORT Reset_Handler
+
+Reset_Handler
+	LDR R0, =18
+	LDR R1, =5
+	LDR R3, =18
+	LDR R4, =5
+LABEL
+	CMP R0, R1
+	BEQ EXIT
+	BHI UP
+	BLO DOWN
+UP
+	ADD R1, R4
+	B LABEL
+DOWN
+	ADD R0, R3
+	B LABEL
+EXIT 
+	LDR R2, =ANS
+	STR R1, [R2]
+STOP B STOP
+
+	AREA mydata, DATA, READWRITE
+ANS DCD 0
+	END

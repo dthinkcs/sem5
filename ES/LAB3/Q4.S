@@ -1,0 +1,28 @@
+;mla finding sum of n numbers
+  	AREA RESET, DATA, READONLY
+	EXPORT __Vectors
+__Vectors
+	DCD 0X10001000
+	DCD Reset_Handler
+	
+	AREA mycode, CODE, READONLY
+	ENTRY
+	EXPORT Reset_Handler
+
+Reset_Handler
+	LDR R0, =0X00000012
+	MLA R3, R0, R0, R0
+	LDR R1, =0X00000002
+	LDR R4, =0
+LABEL
+	SUB R3, R1
+	ADD R4, #1
+	CMP R3, R1
+	BCS LABEL
+	LDR R5, =ANS
+	STR R4, [R5]
+STOP B STOP
+
+	AREA mydata, DATA, READWRITE
+ANS DCD 0
+	END
