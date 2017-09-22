@@ -1,15 +1,14 @@
 #include<stdio.h>
 #include <stdbool.h>
-#define MAX 100
+#define N 100
 
-int matrix[MAX][MAX];
+int Graph[N][N];
 
-int q[MAX];
+int q[N];
 int vertices, edges, vertex;
 int u,v,w;
 int i,j;
 int s,d;
-
 
 void inputGraph(){
 	printf("Number of Vertices and Edges: \n");
@@ -17,7 +16,7 @@ void inputGraph(){
 	
 	for(i=1;i<=vertices;i++){
 		for(j=1;j<=vertices;j++){
-			matrix[i][j] = 0;		
+			Graph[i][j] = 0;		
 		}
 	}
 
@@ -25,7 +24,7 @@ void inputGraph(){
 	
 	for(i=1;i<=edges;i++){
 		scanf("%d%d", &u, &v);
-		matrix[u][v] = matrix[v][u] = 1; 
+		Graph[u][v] = Graph[v][u] = 1; 
 	}
 }
 
@@ -34,22 +33,23 @@ void printGraph(){
 	
 	for(i=1;i<=vertices;i++){
 		for(j=1;j<=vertices;j++)
-			printf("%d", matrix[i][j]);
+			printf("%d", Graph[i][j]);
 		printf("\n");
 	}
 	printf("\n");
 }
 
-int visited[MAX];
+int visited[N];
 int r = -1, f=0;
-void bfs(int ver){
-	for(i = 1; i <= vertices; i++)
-		if(matrix[ver][i] && !visited[i])
-			q[++r] = i;
-	if(f <= r) {
-		visited[q[f]] = 1;
-		bfs(q[f++]);
-	}
+
+void dfs(int ver){
+	int j;
+    printf("\n%d",ver);
+    visited[ver]=1;
+    
+    for(j=1;j<=vertices;j++)
+       if(!visited[j] && Graph[ver][j]==1)
+            dfs(j);
 }
 
 int main(){
@@ -58,15 +58,15 @@ int main(){
 	int origin;
 	printf("Enter origin");
 	scanf("%d", &origin);
-
-	bfs(origin);
-
+	dfs(origin);
+	
+	printf("\n");
 	for(i=1;i<=vertices;i++){
 		if(visited[i]){
 			printf("%d, ", i);
 		}
 		else{
-			printf("\nBFS Not Possible!All Nodes Not Reachable");
+			printf("\nDFS Not Possible!All Nodes Not Reachable");
 			break;
 		}
 	}
