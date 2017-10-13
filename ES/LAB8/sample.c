@@ -64,7 +64,7 @@ void lcd_init()
 	lcd_com();
 	delay_lcd(30000);
 	
-	temp1=0x0C;
+	temp1=0x08;
 	lcd_com();
 	delay_lcd(30000);
 	

@@ -39,7 +39,7 @@ while(1)
 		{
 			min = 0;
 			hr++;
-			if(hr==60)
+			if(hr==24)
 			{
 				hr=0;
 			}
