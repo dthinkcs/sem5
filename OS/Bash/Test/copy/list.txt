@@ -1,0 +1,5 @@
+abc:        empty
+bcd:        empty
+cde:        empty
+first.txt:  ASCII text
+second.txt: ASCII text
