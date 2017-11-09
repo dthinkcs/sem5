@@ -1,0 +1,1 @@
+sumOfDigit.o: sumOfDigit.asm

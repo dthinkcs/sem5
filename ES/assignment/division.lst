@@ -1,0 +1,141 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008         
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         
+   11 00000000         Reset_Handler
+   12 00000000 480A            LDR              R0, =num1   ;divident
+   13 00000002 490B            LDR              R1, =num2   ;divisor
+   14 00000004 F04F 0300       MOV              R3, #00     ;quotient
+   15 00000008         
+   16 00000008 6800            LDR              R0, [R0]
+   17 0000000A 6809            LDR              R1, [R1]
+   18 0000000C 4288            CMP              R0, R1
+   19 0000000E D306            BLO              EXIT
+   20 00000010         UP
+   21 00000010 EBA0 0001       SUB              R0, R1
+   22 00000014 F103 0301       ADD              R3, #01
+   23 00000018 4288            CMP              R0, R1
+   24 0000001A D300            BLO              EXIT
+   25 0000001C E7F8            B                UP
+   26 0000001E         EXIT
+   27 0000001E 461C            MOV              R4, R3
+   28 00000020 4605            MOV              R5, R0
+   29 00000022         
+   30 00000022 E7FE    STOP    B                STOP
+   31 00000024 00000010 
+                       num1    DCD              0X10
+   32 00000028 00000002 
+                       num2    DCD              0X2
+   33 0000002C 00000000 
+              00000000         AREA             mycode, DATA, READONLY
+   34 00000034                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=division
+.d -odivision.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\AR
+M\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=division.lst division.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file division.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file division.asm
+   Uses
+      At line 2 in file division.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXIT 0000001E
+
+Symbol: EXIT
+   Definitions
+      At line 26 in file division.asm
+   Uses
+      At line 19 in file division.asm
+      At line 24 in file division.asm
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 11 in file division.asm
+   Uses
+      At line 5 in file division.asm
+      At line 9 in file division.asm
+
+STOP 00000022
+
+Symbol: STOP
+   Definitions
+      At line 30 in file division.asm
+   Uses
+      At line 30 in file division.asm
+Comment: STOP used once
+UP 00000010
+
+Symbol: UP
+   Definitions
+      At line 20 in file division.asm
+   Uses
+      At line 25 in file division.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file division.asm
+   Uses
+      None
+Comment: mycode unused
+num1 00000024
+
+Symbol: num1
+   Definitions
+      At line 31 in file division.asm
+   Uses
+      At line 12 in file division.asm
+Comment: num1 used once
+num2 00000028
+
+Symbol: num2
+   Definitions
+      At line 32 in file division.asm
+   Uses
+      At line 13 in file division.asm
+Comment: num2 used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+342 symbols in table

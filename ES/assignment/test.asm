@@ -1,0 +1,34 @@
+	AREA RESET, DATA, READONLY
+	EXPORT __Vectors
+__Vectors
+	DCD 0x10001000
+	DCD Reset_Handler
+	AREA mycode,CODE,READONLY
+	ENTRY
+	EXPORT Reset_Handler
+Reset_Handler
+	LDR R11,=num1
+	
+	
+	
+SQUARE 
+	LDR R5, [R11]
+	LDR R6, #0
+UP 
+	MOV R0, R6
+	MOV R1, R11
+	BCDADD
+	MOV R6, R2
+	SUB R5, #01
+	TEQ R5, #0
+	BNE UP 
+	BX LR
+	
+STOP B STOP
+num1 DCD 0X06
+
+
+	AREA mydata,DATA,READWRITE
+res DCD 0
+	END
+	

@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000
+    6 00000004 00000000        DCD              Reset_Handler
+    7 00000008         
+    8 00000008                 AREA             MYCODE,CODE,READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           Reset_Handler
+   11 00000000         
+   12 00000000         Reset_Handler
+   13 00000000 4809            LDR              R0, =num1
+   14 00000002 4B0A            LDR              R3, =res
+   15 00000004 6800            LDR              R0, [R0]
+   16 00000006 F04F 0100       MOV              R1, #00
+   17 0000000A         UP
+   18 0000000A FB01 F101       MUL              R1, R1, R1
+   19 0000000E 1852            ADDS             R2, R1
+   20 00000010 F101 0101       ADD              R1, #01
+   21 00000014 F1A0 0001       SUB              R0, #01
+   22 00000018 F090 0F00       TEQ              R0, #00
+   23 0000001C D1F5            BNE              UP
+   24 0000001E 601A            STR              R2, [R3]
+   25 00000020         
+   26 00000020 E7FE    STOP    B                STOP
+   27 00000022 00 00 00000003 
+                       num1    DCD              0X00000003
+   28 00000028 00000000 
+              00000000         AREA             mycode, DATA, READONLY
+   29 00000000 00000000 
+                       res     DCD              0
+   30 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=hex-unpa
+cked.d -ohex-unpacked.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:
+\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=hex-unpacked.lst h
+ex-unpacked.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file hex-unpacked.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file hex-unpacked.asm
+   Uses
+      At line 2 in file hex-unpacked.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYCODE 00000000
+
+Symbol: MYCODE
+   Definitions
+      At line 8 in file hex-unpacked.asm
+   Uses
+      None
+Comment: MYCODE unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file hex-unpacked.asm
+   Uses
+      At line 6 in file hex-unpacked.asm
+      At line 10 in file hex-unpacked.asm
+
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 26 in file hex-unpacked.asm
+   Uses
+      At line 26 in file hex-unpacked.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 17 in file hex-unpacked.asm
+   Uses
+      At line 23 in file hex-unpacked.asm
+Comment: UP used once
+num1 00000024
+
+Symbol: num1
+   Definitions
+      At line 27 in file hex-unpacked.asm
+   Uses
+      At line 13 in file hex-unpacked.asm
+Comment: num1 used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 28 in file hex-unpacked.asm
+   Uses
+      None
+Comment: mycode unused
+res 00000000
+
+Symbol: res
+   Definitions
+      At line 29 in file hex-unpacked.asm
+   Uses
+      At line 14 in file hex-unpacked.asm
+Comment: res used once
+2 symbols
+342 symbols in table
